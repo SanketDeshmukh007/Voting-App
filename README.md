@@ -1,3 +1,5 @@
+---
+
 # Voting Application
 
 This is a backend application for a voting system where users can vote for candidates. It provides functionalities for user authentication, candidate management, and voting.
@@ -17,50 +19,97 @@ This is a backend application for a voting system where users can vote for candi
 - MongoDB
 - JSON Web Tokens (JWT) for authentication
 
+## Live Deployment
+
+The application is live and accessible at: [https://voting-app-e6eq.onrender.com](https://voting-app-e6eq.onrender.com)
+
+## Docker
+
+The project is containerized using Docker. You can pull the Docker image from Docker Hub using the following command:
+
+```bash
+docker pull sanketdeshmukh07/voting-app:v1
+```
+
+### Running the Docker Container
+
+To run the Docker container locally, use the following command:
+
+```bash
+docker run -d -p 3000:3000 --env-file .env --name voting-app-container sanketdeshmukh07/voting-app:v1
+```
+
+- `-d`: Run the container in detached mode.
+- `-p 3000:3000`: Map port 3000 on your local machine to port 3000 in the container.
+- `--env-file .env`: Specify the environment variables from the `.env` file.
+- `--name voting-app-container`: Assign a name to the running container.
+
 ## Installation
 
 1. Clone the repository:
 
    ```bash
    git clone https://github.com/SanketDeshmukh007/Voting-App.git
+   ```
 
+2. Navigate into the project directory:
 
-# API Endpoints
+   ```bash
+   cd Voting-App
+   ```
 
-## Authentication
+3. Install dependencies:
 
-### Sign Up
+   ```bash
+   npm install
+   ```
+
+4. Set up environment variables in a `.env` file based on `.env.example`.
+
+5. Start the application:
+
+   ```bash
+   npm start
+   ```
+
+## API Endpoints
+
+### Authentication
+
+#### Sign Up
 - `POST /signup`: Sign up a user
 
-### Login
+#### Login
 - `POST /login`: Login a user
 
-## Candidates
+### Candidates
 
-### Get Candidates
+#### Get Candidates
 - `GET /candidates`: Get the list of candidates
 
-### Add Candidate
+#### Add Candidate
 - `POST /candidates`: Add a new candidate (Admin only)
 
-### Update Candidate
+#### Update Candidate
 - `PUT /candidates/:id`: Update a candidate by ID (Admin only)
 
-### Delete Candidate
+#### Delete Candidate
 - `DELETE /candidates/:id`: Delete a candidate by ID (Admin only)
 
-## Voting
+### Voting
 
-### Get Vote Count
+#### Get Vote Count
 - `GET /candidates/vote/count`: Get the count of votes for each candidate
 
-### Vote for Candidate
+#### Vote for Candidate
 - `POST /candidates/vote/:id`: Vote for a candidate (User only)
 
-## User Profile
+### User Profile
 
-### Get Profile
+#### Get Profile
 - `GET /users/profile`: Get user profile information
 
-### Change Password
+#### Change Password
 - `PUT /users/profile/password`: Change user password
+
+---
