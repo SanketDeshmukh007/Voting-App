@@ -110,9 +110,9 @@ router.get('/vote/:candidateID', jwtAuthMiddleware, async (req, res)=>{
     // Admin can't vote
     // user can vote only once
     
-     const candidateID = req.params.candidateID;
-     console.log(candidateID);
-   const userId = req.user.id;
+    const candidateID = req.params.candidateID;
+    console.log(candidateID);
+    const userId = req.user.id;
 
     try{
         // Find the Candidate document with the specified candidateID
