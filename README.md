@@ -77,10 +77,10 @@ docker run -d -p 3000:3000 --env-file .env --name voting-app-container sanketdes
 ### Authentication
 
 #### Sign Up
-- `POST /signup`: Sign up a user
+- `POST user/signup`: Sign up a user
 
 #### Login
-- `POST /login`: Login a user
+- `POST user/login`: Login a user
 
 ### Candidates
 
